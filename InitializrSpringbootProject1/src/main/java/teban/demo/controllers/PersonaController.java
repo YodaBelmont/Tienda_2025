@@ -31,6 +31,7 @@ public class PersonaController {
     
     @GetMapping("/nuevo")
     public String mostrarFormularioNuevaPersona(Model model){
+        System.out.println(">>> Accediendo a /personas/nuevo");
         model.addAttribute("persona", new Persona());
         return "persona-form";
     }
