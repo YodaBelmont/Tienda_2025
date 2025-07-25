@@ -17,8 +17,7 @@ import teban.demo.repositories.PersonaRepository;
 public class PersonaService {
     
     @Autowired
-    private PersonaRepository personaRepository;
-    
+    private PersonaRepository personaRepository;   
     
     public List<Persona> findAll(){
         return (List<Persona>) this.personaRepository.findAll();
@@ -39,6 +38,5 @@ public class PersonaService {
             this.personaRepository.deleteById(Id);
         }
         return persona;
-    }
-    
+    }    
 }
