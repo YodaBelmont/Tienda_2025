@@ -16,11 +16,12 @@ import teban.demo.entities.Producto;
 import teban.demo.repositories.PersonaRepository;
 
 @Service
-public class PersonaService {
+public class PersonaService implements IPersonaService{
 
     @Autowired
     private PersonaRepository personaRepository;
-
+    
+    @Override
     public List<Persona> findAll() {
         return (List<Persona>) this.personaRepository.findAll();
     }
@@ -38,17 +39,29 @@ public class PersonaService {
 
         return personaRepository.save(persona);
     }
-
+    
+    @Override
     public Optional<Persona> getById(Long id) {
         return personaRepository.findById(id);
     }
-
+    
     @Transactional
+    @Override
     public Optional<Persona> delete(Long Id) {
         Optional<Persona> persona = this.getById(Id);
         if (persona.isPresent()) {
             this.personaRepository.deleteById(Id);
         }
         return persona;
+    }
+
+    @Override
+    public Optional<Persona> update(Long Id, Persona persona) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public Persona getByNombre(String nombre) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 }
