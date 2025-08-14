@@ -13,5 +13,6 @@ import teban.demo.entities.Persona;
  * @author PC
  */
 public interface PersonaRepository extends CrudRepository<Persona, Long>{
+    Persona findByNombre(String nombre);
     
 }

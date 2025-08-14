@@ -7,7 +7,7 @@ package teban.demo.services;
 import java.util.List;
 import java.util.Optional;
 import teban.demo.entities.Persona;
-import teban.demo.entities.Producto;
+
 
 /**
  *
@@ -15,7 +15,7 @@ import teban.demo.entities.Producto;
  */
 public interface IPersonaService {
     public List<Persona> findAll();
-    public Producto save (Persona persona);
+    public Persona save (Persona id);
     public Optional<Persona> getById(Long Id);
     public Optional<Persona> delete(Long Id);
     public Optional<Persona> update(Long Id, Persona persona);
